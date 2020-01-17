@@ -157,7 +157,7 @@ export default {
   computed:{
     getTotalPages() {
       let dataLength = !this.sst ? this.data.length : this.total;
-      return Math.ceil(dataLength / this.maxItemsx)
+      return Math.ceil(dataLength / this.maxItemsx);
     },
     getTotalPagesSearch() {
       return Math.ceil(this.queriedResults.length / this.maxItems)
