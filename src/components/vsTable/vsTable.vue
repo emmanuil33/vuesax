@@ -181,7 +181,7 @@ export default {
       }
     },
     isCheckedLine () {
-      let lengthx = this.data.length
+      let lengthx = !this.sst ? this.data.length : this.total
       let lengthSelected = this.value.length
       return lengthx !== lengthSelected
     },
