@@ -243,7 +243,7 @@ export default {
     window.addEventListener('resize', this.listenerChangeWidth)
     this.maxItemsx = this.maxItems
     this.currentx = this.currentPage;
-    this.loadData()
+    this.loadData();
 
     // this.$nextTick(() => {
     //   if(this.datax.length > 0) {
