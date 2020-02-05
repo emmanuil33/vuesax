@@ -148,7 +148,7 @@ export default {
     trs: [],
     datax: [],
     searchx: null,
-    currentx: this.currentPage,
+    currentx: 1,
     maxItemsx: 5,
     hasExpadableData: false,
     currentSortKey: null,
@@ -242,6 +242,7 @@ export default {
   mounted () {
     window.addEventListener('resize', this.listenerChangeWidth)
     this.maxItemsx = this.maxItems
+    this.currentx = this.currentPage;
     this.loadData()
 
     // this.$nextTick(() => {
