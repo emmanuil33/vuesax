@@ -148,7 +148,7 @@ export default {
     trs: [],
     datax: [],
     searchx: null,
-    currentx: 1,
+    currentx: this.currentPage,
     maxItemsx: 5,
     hasExpadableData: false,
     currentSortKey: null,
