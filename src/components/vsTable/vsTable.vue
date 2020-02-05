@@ -242,8 +242,9 @@ export default {
   mounted () {
     window.addEventListener('resize', this.listenerChangeWidth)
     this.maxItemsx = this.maxItems
-    window.console.log(this.currentx, this.currentPage);
-    //this.currentx = this.currentPage;
+    if(this.currentx != this.currentPage) {
+      this.currentx = this.currentPage;
+    }
     this.loadData();
 
     // this.$nextTick(() => {
