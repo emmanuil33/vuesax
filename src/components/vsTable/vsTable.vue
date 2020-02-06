@@ -127,7 +127,7 @@ export default {
       type: Array
     },
     currentPage: {
-      default: 1,
+      default: 0,
       type: Number | String
     },
     sst:{
@@ -242,7 +242,7 @@ export default {
   mounted () {
     window.addEventListener('resize', this.listenerChangeWidth)
     this.maxItemsx = this.maxItems
-    if(this.currentx != this.currentPage) {
+    if(this.currentPage && this.currentx != this.currentPage) {
       this.currentx = this.currentPage;
     }
     this.loadData();
