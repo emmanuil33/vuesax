@@ -221,8 +221,9 @@ export default {
   },
 
   async mounted () {
-    this.current = this.go = this.value
+    //this.current = this.go = this.value
     await this.calculateMinMax(this.current)
+    this.current = this.go = this.value
     this.indexRows = this.descriptionItems.indexOf(this.maxItems)
     this.getPages()
   },
