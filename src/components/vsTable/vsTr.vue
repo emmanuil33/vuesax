@@ -41,14 +41,16 @@ export default {
     colspan:0,
     expanded: false,
     maxHeight:'0px',
-    activeEdit: false,
-    table_datax: this.$parent.datax
+    activeEdit: false
   }),
   computed:{
     styleExpand () {
       return {
         maxHeight: this.maxHeight
       }
+    },
+    table_datax() {
+      return this.$parent.datax;
     },
     getColspanExpand () {
       let lengthx = this.$parent.$refs.colgroup.querySelectorAll('th').length
@@ -63,8 +65,11 @@ export default {
     }
   },
   watch: {
-    'table_datax'() {
-      this.collapseExpandedData()
+    'table_datax': {
+      handler: function (after, before) {
+        this.collapseExpandedData()
+      },
+      deep: true
     }
   },
   mounted () {
