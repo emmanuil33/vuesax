@@ -41,7 +41,8 @@ export default {
     colspan:0,
     expanded: false,
     maxHeight:'0px',
-    activeEdit: false
+    activeEdit: false,
+    table_datax: this.$parent.datax
   }),
   computed:{
     styleExpand () {
@@ -62,7 +63,7 @@ export default {
     }
   },
   watch: {
-    '$parent.datax'() {
+    'table_datax'() {
       this.collapseExpandedData()
     }
   },
