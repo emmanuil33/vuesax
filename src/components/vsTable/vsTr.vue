@@ -65,7 +65,7 @@ export default {
     }
   },
   watch: {
-    'table_datax': {
+    '$parent.datax': {
       handler: function (after, before) {
         this.collapseExpandedData()
       },
