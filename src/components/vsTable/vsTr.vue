@@ -19,6 +19,7 @@
       />
 
       <vs-icon v-if="$slots.expand">keyboard_arrow_down</vs-icon>
+      <span style="display: none;">{{ table_datax.length }}</span>
     </td>
     <slot></slot>
   </tr>
@@ -65,7 +66,7 @@ export default {
     }
   },
   watch: {
-    '$parent.datax': {
+    'table_datax': {
       handler: function (after, before) {
         this.collapseExpandedData()
       },
