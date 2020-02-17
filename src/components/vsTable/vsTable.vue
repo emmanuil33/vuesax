@@ -228,6 +228,12 @@ export default {
         if(this.datax.length > 0) {
           this.changeTdsWidth()
         }
+      });
+
+      this.$refs.table.rows.forEach(function(item) {
+        if(item.className == 'tr-expand') {
+          item.remove();
+        }
       })
     },
     searchx() {
@@ -237,7 +243,8 @@ export default {
         this.loadData()
         this.currentx = 1
       }
-    }
+    },
+
   },
   mounted () {
     window.addEventListener('resize', this.listenerChangeWidth)
