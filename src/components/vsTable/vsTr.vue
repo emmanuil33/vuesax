@@ -19,7 +19,6 @@
       />
 
       <vs-icon v-if="$slots.expand">keyboard_arrow_down</vs-icon>
-      <span style="display: none;">{{ table_datax.length }}</span>
     </td>
     <slot></slot>
   </tr>
@@ -42,16 +41,14 @@ export default {
     colspan:0,
     expanded: false,
     maxHeight:'0px',
-    activeEdit: false
+    activeEdit: false,
+    table_datax: this.$parent.datax,
   }),
   computed:{
     styleExpand () {
       return {
         maxHeight: this.maxHeight
       }
-    },
-    table_datax() {
-      return this.$parent.datax;
     },
     getColspanExpand () {
       let lengthx = this.$parent.$refs.colgroup.querySelectorAll('th').length
@@ -67,7 +64,7 @@ export default {
   },
   watch: {
     'table_datax': {
-      handler: function (after, before) {
+      handler: function () {
         this.collapseExpandedData()
       },
       deep: true
